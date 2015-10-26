@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src="scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="header">
+			<%= erb :header %>
+		</div>
+		<div id="search">
+			<input type="text" id="movie" placeholder="title..." />
+			<button type="button"
+			        id="search"
+			        onclick='omdbSearch(document.querySelector("#movie").value, <%= @favorited_movie_ids.to_json %>);'>
+			        Search
+			</button>
+		</div>
+		<div id="results"></div>	
+	</body>
+</html>

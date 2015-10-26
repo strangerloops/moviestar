@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="header">
+			<%= erb :header %>
+		</div>
+		<div id="favorites">
+			<h2>My Favorites</h2>
+			<% if @favorited_movie_titles.any? %>
+				<% @favorited_movie_titles.each do |title| %>
+					<div class="favorite">
+						<%= title %>
+					</div>
+				<% end %>
+				<% else %>
+				You haven't favorited any movies!
+			<% end %>
+		</div>
+	</body>
+</html>
