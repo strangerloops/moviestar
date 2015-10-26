@@ -3,7 +3,7 @@ function omdbSearch(query, favoritedIDs){
 	resultsDiv.innerHTML = '';
 
 	// hit OMDB's API and add the results to our page.
-	getJSON("http://www.omdbapi.com/?s=" + query, function(response){
+	getJSON("https://www.omdbapi.com/?s=" + query, function(response){
 		response.Search.forEach(function(searchResult){
 			document.querySelector("#results").appendChild(rowFor(searchResult, favoritedIDs));
 		});
@@ -68,7 +68,7 @@ function rowFor(searchResult, favoritedIDs){
 
 function displayDetail(parentDiv, imdbID){
 	// hit OMBD's API to get details for this movie.
-	getJSON("http://www.omdbapi.com/?i=" + imdbID + "&plot=full&r=json", function(response){
+	getJSON("https://www.omdbapi.com/?i=" + imdbID + "&plot=full&r=json", function(response){
 		var detailsDiv = parentDiv.getElementsByClassName("details")[0] || document.createElement('div');
 		detailsDiv.className = "details";
 		detailsDiv.innerHTML = '';
