@@ -22,6 +22,10 @@ input:focus {
 	outline:none;
 }
 
+input.middle:focus {
+  outline-width: 0;
+}
+
 h1, h2 {
 	font-family: 'Raleway', sans-serif;
 }
